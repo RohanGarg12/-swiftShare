@@ -1,0 +1,27 @@
+#SwiftShare
+
+Version History
+----------------
+
+v4 - User Registration
+
+v3 - Send Files via Email
+
+v2.1
+
+v2.0
+Redesign Theme
+Improved Code
+
+----
+v1.2
+Send and Recieve data through AJAX
+
+v1.1
+Added Timestamp based file names
+Optimized code structure
+
+v1.0
+Initial Version
+
+----- x -----

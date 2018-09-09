@@ -1,0 +1,49 @@
+MLAB: mongodb://abhishekp1996:Gtasan12345@ds125914.mlab.com:25914/apps
+
+AWS IAM USER
+
+User 1
+Name: swiftsharebot
+ARN: arn:aws:iam::801393712790:user/swiftsharebot
+AccessKey: AKIAI62TJEU76445FIIA
+SecretKey: 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
+___________________________________________________
+
+
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1488494182833",
+    "Statement": [
+        {
+            "Sid": "Stmt1488493308547",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::801393712790:user/swiftsharebot"
+            },
+            "Action": [
+                "s3:ListBucket",
+                "s3:ListBucketVersions",
+                "s3:GetBucketLocation",
+                "s3:Get*",
+                "s3:Put*"
+            ],
+            "Resource": "arn:aws:s3:::swiftshare"
+        }
+    ]
+}
+
+{
+  "Id": "Policy1503861186141",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1503861179469",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::swiftshare/*",
+      "Principal": "*"
+    }
+  ]
+}

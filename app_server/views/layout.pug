@@ -1,0 +1,97 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Swift Share - Share and Print Files Swiftly
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Montserrat:400,700')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .container
+      .content
+        block content
+
+      .header
+        .curved-header
+          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:a='http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/', x='0px', y='0px', viewbox='0 0 1366.5 79.8', style='overflow:scroll;enable-background:new 0 0 1366.5 79.8;', preserveaspectratio='xMinYMin meet')
+            style(type='text/css').
+              .st0{fill:#FFFFFF;}
+            defs
+            path.st0(d='M0,36.9L0,36.9c246.5-48.5,473.8-49.8,683,0l0,0l0,0c246.5,48.5,473.8,49.8,683,0l0,0l0.5,42.9H0.5L0,36.9z')
+        .branding.branding-main
+          .head
+            img.branding-logo(src='/images/logo.png', alt='')
+            h1
+              a(href="/") Swift Share
+            p Share and Print your Files Swiftly
+          ul.footer-links
+            li
+              a(href='/about') About
+            li
+              a(href='/contact') Contact
+            li
+              a(href='/faq') FAQs
+            li
+              a(href='/behind') How it Works?
+            p
+              | Version 2
+              strong .
+              | 0
+              strong .
+              | 0
+        .branding.branding-credits
+          .email-feature
+            p
+              | Do you like this website? 
+              br
+              |  Share a word with your 
+              span.credit-link friends.
+          .credit
+            p
+              | Created with 
+              span.credit-symbol ♥
+              |  & @
+              a.credit-bold(href='https://github.com/rohangarg12') rohangarg12
+              |  by @
+              a.credit-bold(href='https://github.com/abhishekp1996') abhishekp1996
+             
+            p
+              span.credit-bold ©
+              |  SwiftShare Inc. 2017. Built with JavaScript (NodeJS) and Brackets
+    // Script Code
+    script.
+      var input = document.getElementById('input-file');
+      var label = input.nextElementSibling,
+      labelVal = label.innerHTML;
+      input.addEventListener('change', function(e) {
+        var fileName = e.target.value.split('\\').pop();
+        if(fileName) {
+          console.log(input.files[0].size);
+          if(input.files[0].size<=10485760) {
+            label.innerHTML = fileName;
+            label.style.fontSize = '1.6em';
+            label.style.padding = '1em 2.6em';
+            label.style.backgroundColor = 'rgba(32,32,32,.4)';
+            label.style.fontWeight = 400;
+            document.getElementById('file-submit').style.display = 'block';
+          }
+          else {
+            label.style.fontSize = '1.4em';
+            label.style.padding = '1.2em 1em';
+            label.style.backgroundColor = 'rgba(0,0,0,.6)';
+            label.innerHTML = '10Mb Limit Exceeded';
+            label.style.fontWeight = 700;
+            document.getElementById('file-submit').style.display = 'none';
+          }
+        }
+        else {
+          label.innerHTML = 'Upload';
+          label.style.fontSize = '1.6em';
+          label.style.padding = '1em 2.6em';
+          label.style.backgroundColor = 'rgba(32,32,32,.4)';
+          label.style.fontWeight = 400;
+          document.getElementById('file-submit').style.display = 'none';
+        }
+      });
+    
+    script(src="/javascripts/ajax.js")

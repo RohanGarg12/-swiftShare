@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .section.section-full
+    .section-title
+      .section-title-content
+        p contact
+
+    .section-description
+      .section-desc-content
+        if(message !== undefined)
+          if(err)
+            p= message
+          else
+            p.primary= message
+        else
+          p.primary Have any feedbacks, suggestions? We would love to hear from you.
+        
+        form.contact-form(action='/contact/send', method='POST')
+          input(type='text', name='name', required='true' , placeholder='Name', style='margin-right: 2%')
+          input(type='email', name='email', required='true', placeholder='Email')
+          textarea.message(name='message', required='true' , placeholder='Your Message... 160 Characters Max.')
+          input.submit(type='submit', value='Send')

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .section.section-token
+    .section-content.token-content#token-content-id
+      h2#token-head Have a Token?
+      p#token-subhead Enter token to download your Files
+      div.form
+        input#input-token(type='text', name='token')
+        button.submit.submit-token(onclick='token()')
+          i.fa.fa-chevron-right
+
+  .section.section-upload
+    .section-content.upload-content
+      if(token !== undefined)
+        <a href="/" id="retry-icon"><i class="fa fa-repeat"></i> Another File</a>
+        h2 Aren't we cool?
+        p Your files have been uploaded, use this token to download your files in the token section
+        div.form
+          p#token-display= token

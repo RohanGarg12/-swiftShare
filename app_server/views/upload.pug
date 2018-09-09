@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 have a File?
+  p.limit (Max file size 10MB)
+  
+  form(action='/upload/u', method='POST', enctype='multipart/form-data')
+    input.file(type='file', name='fileInput')
+    input.uemail(type='email', name='email', placeholder='Email')
+    input.submit(type='submit', value='Go')

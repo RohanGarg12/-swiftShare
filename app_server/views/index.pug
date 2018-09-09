@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .section.section-token
+    .section-content.token-content#token-content-id
+      h2#token-head Have a Token?
+      p#token-subhead Enter token to download your Files
+      div.form
+        input#input-token(type='text', name='token')
+        button.submit.submit-token(onclick='token()')
+          i.fa.fa-chevron-right
+
+  .section.section-upload
+    .section-content.upload-content
+      h2 Have a File?
+      p Upload Files to generate Token
+      form.form(action='/upload/u', enctype='multipart/form-data', method='POST')
+        input#input-file(type='file', name='fileInput', required)
+        label(for='input-file') Upload
+        button#file-submit.submit.submit-file(type='submit')
+          i.fa.fa-chevron-right

@@ -1,0 +1,16 @@
+# Features
+
+
+
+
+
+
+# Updates
+> Open popup for docs and pdf files for direct prining.
+>  
+
+
+
+
+# Optimizations
+1. Generate Details more effectively

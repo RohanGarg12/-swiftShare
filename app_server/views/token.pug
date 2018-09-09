@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  form(method="POST" action="/token/token")
+   label(for="token") Enter token:
+   input(type="number" name='token' placeholder='token' max="9999" min="1111" )
+   input(type="submit" name="submit")
+  
+
